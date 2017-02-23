@@ -19,4 +19,14 @@ class User extends Authenticatable
     protected $hidden = [
         'fb_token', 'remember_token',
     ];
+
+    /**
+     * Wipes user's facebook token.
+     *
+     * @return bool
+     */
+    public function expireToken()
+    {
+        return $this->fill(['fb_token' => null])->save();
+    }
 }

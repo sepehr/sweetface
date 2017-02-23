@@ -13,7 +13,7 @@
     <div id="app">
         <sweetface
                 :user="{{ $user or 'false' }}"
-                logout="{{ route('home') }}"
+                logout="{{ route('auth.logout') }}"
                 redirect="{{ route('home') }}"
                 message="{{ session('message') }}">
         </sweetface>
