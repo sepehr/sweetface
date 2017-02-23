@@ -13,12 +13,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(SweetFace\User::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'name'     => $faker->name,
+        'fb_id'    => str_random(17),
+        'fb_token' => str_random(179),
+        'avatar'   => 'https://fbcdn-profile-a.akamaihd.net/static-ak/rsrc.php/v2/yL/r/HsTZSDw4avx.gif',
     ];
 });
