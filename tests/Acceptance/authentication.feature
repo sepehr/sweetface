@@ -3,12 +3,14 @@ Feature: Facebook Authentication
   As a user
   I need to be able to login using my Facebook account and logout as well
 
+  @javascript
   Scenario: Guest On Homepage
     Given I am not logged in
       And am on the homepage
     Then I should see "Login With Facebook"
       But should not see "Logout"
 
+  @javascript
   Scenario: Authenticated User On Homepage
     Given following user exists:
       | id | name | is_active | fb_id | fb_token | avatar |

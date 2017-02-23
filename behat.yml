@@ -13,3 +13,7 @@ default:
       laravel: ~
       show_cmd: 'open %s'
       default_session: laravel
+      base_url: 'https://sweetface.dev'
+      browser_name: chrome
+      selenium2:
+        wd_host: "http://127.0.0.1:4444/wd/hub"
