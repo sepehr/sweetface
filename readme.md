@@ -1,2 +1,2 @@
 # SweetFace
-SocialSweethearts interview challange.
+Connect with facebook and see a SweetFace :)
