@@ -26,8 +26,8 @@ Feature: Facebook Authentication
   @javascript
   Scenario: Logging Out
     Given I am logged in with Facebook ID "123123123"
-    And am on the homepage
+      And am on the homepage
     When I follow "Logout?"
     Then I am not logged in anymore
-    And am on the homepage
-    And should see "Login With Facebook"
+      And am on the homepage
+      And should see "Login With Facebook"
