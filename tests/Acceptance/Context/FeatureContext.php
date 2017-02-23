@@ -53,4 +53,12 @@ class FeatureContext extends MinkContext implements Context
 
         PHPUnit::assertCount(User::count(), $table);
     }
+
+    /**
+     * @Given /^waiting for the app to load$/
+     */
+    public function waiting()
+    {
+        $this->getSession()->wait(3000);
+    }
 }

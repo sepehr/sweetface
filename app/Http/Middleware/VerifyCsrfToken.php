@@ -12,6 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        // Facebook's deauthorization callback
+        'auth/facebook/deauth',
     ];
 }

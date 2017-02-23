@@ -31,3 +31,10 @@ Feature: Facebook Authentication
     Then I am not logged in anymore
       And am on the homepage
       And should see "Login With Facebook"
+
+  @javascript
+  Scenario: Logging In
+    Given I am not logged in
+      And am on the homepage
+    When I follow "Login With Facebook"
+    Then the url should match "login.php"

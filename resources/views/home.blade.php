@@ -14,7 +14,7 @@
         <sweetface
                 :user="{{ $user or 'false' }}"
                 logout="{{ route('auth.logout') }}"
-                redirect="{{ route('home') }}"
+                login="{{ route('auth.fb.login') }}"
                 message="{{ session('message') }}">
         </sweetface>
     </div>
