@@ -16,6 +16,11 @@ class AppServiceProvider extends ServiceProvider
     {
         // MariaDB compatibility
         Schema::defaultStringLength(191);
+
+        // Register these service providers only on non-production envs
+        if ($this->app->environment('local', 'testing', 'acceptance')) {
+            $this->app->register(\Sepehr\BehatLaravelJs\ServiceProvider::class);
+        }
     }
 
     /**

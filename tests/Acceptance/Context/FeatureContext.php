@@ -5,18 +5,18 @@ namespace Tests\Acceptance\Context;
 use SweetFace\User;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use Illuminate\Support\Facades\Auth;
-use Laracasts\Behat\Context\Migrator;
 use PHPUnit_Framework_Assert as PHPUnit;
+use Laracasts\Behat\Context\MigrateRefresh;
 use Behat\MinkExtension\Context\MinkContext;
-use Laracasts\Behat\Context\DatabaseTransactions;
+use Sepehr\BehatLaravelJs\Concerns\AuthenticateUsers;
+use Sepehr\BehatLaravelJs\Concerns\PreserveBehatEnvironment;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext extends MinkContext implements Context
 {
-    use Migrator, DatabaseTransactions;
+    use PreserveBehatEnvironment, AuthenticateUsers, MigrateRefresh;
 
     /**
      * Holds user's facebook ID.
@@ -64,33 +64,12 @@ class FeatureContext extends MinkContext implements Context
     }
 
     /**
-     * Assert that the user is logged in.
+     * Sets user's facebook ID in the context.
+     *
+     * @param  string  $fbId
      */
-    private function assertAuthenticated()
-    {
-        PHPUnit::assertTrue(Auth::check());
-    }
-
-    /**
-     * Assert that the user is not authenticated.
-     */
-    private function assertGuest()
-    {
-        PHPUnit::assertTrue(Auth::guest());
-    }
-
     private function withFacebookId($fbId)
     {
         $this->fbId = $fbId;
-    }
-
-    /**
-     * Logs the user object in.
-     *
-     * @param  User $user
-     */
-    private function loginAs($user)
-    {
-        Auth::login($user, true);
     }
 }

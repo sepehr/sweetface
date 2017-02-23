@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d71a09a0407ae739cc2e93812c029287",
+    "content-hash": "b24759e9a99b7c74f9cdd76ee9b21e76",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2514,16 +2514,16 @@
         },
         {
             "name": "laracasts/behat-laravel-extension",
-            "version": "1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Behat-Laravel-Extension.git",
-                "reference": "c8eeb440235c23ba14a601ea94801ace3af0e18e"
+                "reference": "536addaafd58f801257c2d5ade9b9e38cf159c56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Behat-Laravel-Extension/zipball/c8eeb440235c23ba14a601ea94801ace3af0e18e",
-                "reference": "c8eeb440235c23ba14a601ea94801ace3af0e18e",
+                "url": "https://api.github.com/repos/laracasts/Behat-Laravel-Extension/zipball/536addaafd58f801257c2d5ade9b9e38cf159c56",
+                "reference": "536addaafd58f801257c2d5ade9b9e38cf159c56",
                 "shasum": ""
             },
             "require": {
@@ -2559,7 +2559,7 @@
                 "extension",
                 "laravel"
             ],
-            "time": "2015-02-28T14:31:47+00:00"
+            "time": "2016-11-16T12:58:51+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -3825,6 +3825,42 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
+            "name": "sepehr/behat-laravel-js",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/Users/Sepehr/Dev/php/packages/sepehr/behat-laravel-js",
+                "reference": "064d60565d7060cc29f4df2dc27dbd48e07c4f86"
+            },
+            "require": {
+                "laracasts/behat-laravel-extension": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sepehr\\BehatLaravelJs\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sepehr Lajevardi",
+                    "email": "lajevardi@gmail.com"
+                }
+            ],
+            "description": "Testing javascript apps with Laravel and Behat.",
+            "keywords": [
+                "bdd",
+                "behat",
+                "javascript",
+                "laravel",
+                "selenium"
+            ],
+            "time": "2017-02-23T17:15:05+00:00"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "v3.2.4",
             "source": {
@@ -4268,9 +4304,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "sepehr/behat-laravel-js": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6.4"
