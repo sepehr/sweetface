@@ -3,6 +3,8 @@
 namespace Tests\Acceptance\Context;
 
 use Behat\Behat\Context\Context;
+use Illuminate\Support\Facades\Auth;
+use PHPUnit_Framework_Assert as PHPUnit;
 use Behat\MinkExtension\Context\MinkContext;
 
 /**
@@ -11,13 +13,10 @@ use Behat\MinkExtension\Context\MinkContext;
 class FeatureContext extends MinkContext implements Context
 {
     /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
+     * @Given /^(?:|I?\s?am)?\s?not logged in\s?(?:|anymore)?$/
      */
-    public function __construct()
+    public function notLoggedIn()
     {
+        PHPUnit::assertTrue(Auth::guest());
     }
 }

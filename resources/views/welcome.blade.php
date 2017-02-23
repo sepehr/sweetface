@@ -70,6 +70,8 @@
                 <div class="title m-b-md">
                     SweetFace
                 </div>
+
+                <a href="#">Login With Facebook</a>
             </div>
         </div>
     </body>
