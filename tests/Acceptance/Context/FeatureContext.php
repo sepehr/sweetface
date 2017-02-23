@@ -19,13 +19,6 @@ class FeatureContext extends MinkContext implements Context
     use PreserveBehatEnvironment, AuthenticateUsers, MigrateRefresh;
 
     /**
-     * Holds user's facebook ID.
-     *
-     * @var string
-     */
-    private $fbId;
-
-    /**
      * @Given /^(?:|I?\s?am)?\s?not logged in\s?(?:|anymore)?$/
      */
     public function notLoggedIn()
@@ -42,8 +35,6 @@ class FeatureContext extends MinkContext implements Context
      */
     public function loginWithFacebookId($fbId)
     {
-        $this->withFacebookId($fbId);
-
         $this->loginAs(User::whereFbId($fbId)->first());
 
         $this->assertAuthenticated();
@@ -61,15 +52,5 @@ class FeatureContext extends MinkContext implements Context
         }
 
         PHPUnit::assertCount(User::count(), $table);
-    }
-
-    /**
-     * Sets user's facebook ID in the context.
-     *
-     * @param  string  $fbId
-     */
-    private function withFacebookId($fbId)
-    {
-        $this->fbId = $fbId;
     }
 }
