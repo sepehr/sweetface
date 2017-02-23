@@ -1,0 +1,15 @@
+default:
+  autoload:
+    '': %paths.base%/tests/Acceptance/Context
+
+  suites:
+    default:
+      paths: [ %paths.base%/tests/Acceptance ]
+      contexts: [ Tests\Acceptance\Context\FeatureContext ]
+
+  extensions:
+    Laracasts\Behat: ~
+    Behat\MinkExtension:
+      laravel: ~
+      show_cmd: 'open %s'
+      default_session: laravel
