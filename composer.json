@@ -1,7 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "SweetFace",
+    "description": "SocialSweethearts Interview Challenge.",
     "license": "MIT",
     "type": "project",
     "require": {
@@ -19,7 +18,7 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "SweetFace\\": "app/"
         }
     },
     "autoload-dev": {
