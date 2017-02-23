@@ -71,7 +71,13 @@
                     SweetFace
                 </div>
 
-                <a href="#">Login With Facebook</a>
+                @if ($user = Auth::user())
+                    <img src="#" alt="">
+                    <div class="name">{{ $user->name }}</div>
+                    <a href="#">Logout?</a>
+                @else
+                    <a href="#">Login With Facebook</a>
+                @endif
             </div>
         </div>
     </body>
