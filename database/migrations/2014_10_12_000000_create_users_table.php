@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('fb_id');
             $table->string('fb_token')->nullable();
-            $table->string('avatar');
+            $table->string('avatar', 512);
             $table->boolean('is_active')->default(true);
             $table->rememberToken();
             $table->timestamps();
