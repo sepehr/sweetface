@@ -62,6 +62,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Checks whether the user is active or not.
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return (bool) $this->is_active;
+    }
+
+    /**
      * Prepares graph user data into an array for insertion.
      *
      * @param  GraphUserContract  $graphUser

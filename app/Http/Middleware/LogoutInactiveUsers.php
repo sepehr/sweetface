@@ -18,7 +18,7 @@ class LogoutInactiveUsers
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if ($user = Auth::guard($guard)->user() and ! $user->is_active) {
+        if ($user = Auth::guard($guard)->user() and ! $user->isActive()) {
             Auth::guard($guard)->logout();
 
             return redirect(route('home'))
